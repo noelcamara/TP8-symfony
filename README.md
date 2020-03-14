@@ -1,6 +1,6 @@
 # TP8-symfony
 
-__**TP de trois séances :**__
+**TP de trois séances :**
 **1ère séance** :
 - création des routes permettant la récupération des données des tables
 - design responsive
