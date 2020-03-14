@@ -12,7 +12,7 @@
 - authentification pour accéder aux données
 
 
-**autheurs : **
+**auteurs** : 
 Thomas Peronny
 Rida Ghouti Terki
 Maxence Bourgeaux
