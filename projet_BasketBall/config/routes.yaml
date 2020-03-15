@@ -1,3 +1,7 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+vueTousJoueur:
+  path: App\Entity\Joueur
+  controller: App\Controller\JoueurController::vueAll
