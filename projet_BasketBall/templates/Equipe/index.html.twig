@@ -9,19 +9,12 @@
 </style>
 
 <div class="example-wrapper">
-
-    <p>id equipe, nom equipe, nombre de defaite, nombre de vitoires,nombre de points</p>
-
-{% for equipe in equipe %}
-  {{ equipe.getIdEquipe() }} {{ equipe.getNomEquipe() }} {{ equipe.getNbDefaite() }}
-    {{ equipe.getNbVictoire }} {{ equipe.getNbPoints() }} 
-    <br>
-{% endfor %}
+    <h1>Hello {{ controller_name }}! ✅</h1>
 
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ 'C:/wamp64/www/symfony/tp8-symfony/projet_BasketBall/src/Controller/EquipeController.php'|file_link(0) }}">src/Controller/EquipeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/symfony/tp8-symfony/projet_BasketBall/templates/Equipe/index.html.twig'|file_link(0) }}">templates/Equipe/index.html.twig</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/wamp64/www/symfony/tp8-symfony/projet_BasketBall/templates/equipe/index.html.twig'|file_link(0) }}">templates/equipe/index.html.twig</a></code></li>
     </ul>
 </div>
 {% endblock %}

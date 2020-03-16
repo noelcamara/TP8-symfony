@@ -18,16 +18,6 @@ class JoueurRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Joueur::class);
     }
-    
-    /*
-    public function findAll()
-    {
-        return $this->createQueryBuilder('j')
-            ->orderBy('j.id', 'ASC')
-            ->getQuery()
-            ->getResult()
-            ;
-    }*/
 
     // /**
     //  * @return Joueur[] Returns an array of Joueur objects
