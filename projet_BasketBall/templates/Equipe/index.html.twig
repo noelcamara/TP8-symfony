@@ -1,26 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EquipeController!{% endblock %}
+{% block title %}Table equipe{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1> toutes les equipes </h1>
-    <p>id equipe, nom equipe, ...</p>
-
-    {% for equipe in equipes %}
-        {{ equipe.getIdEquipe() }} {{ equipe.getNomEquipe() }}
-        <br>
-    {% endfor %}
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/symfony/tp8-symfony/projet_BasketBall/src/Controller/EquipeController.php'|file_link(0) }}">src/Controller/EquipeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/symfony/tp8-symfony/projet_BasketBall/templates/equipe/index.html.twig'|file_link(0) }}">templates/equipe/index.html.twig</a></code></li>
-    </ul>
-</div>
+{% block content %}
+  <p><a href=''>Insérer une nouvelle équipe</a></p><br>
+    <table id='table' class='table is-fullwidth'>
+      <thead>
+        <tr>
+          <th>id_equipe</th>
+          <th>nom_equipe</th>
+          <th>nb_victoire</th>
+          <th>nb_defaite</th>
+          <th>nb_points</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for equipe in equipes %}
+          <tr>
+            <td>{{ equipe.getIdEquipe() }}</td>
+            <td>{{ equipe.getNomEquipe() }}</td>
+            <td>{{ equipe.getNbVictoire() }}</td>
+            <td>{{ equipe.getNbDefaite() }}</td>
+            <td>{{ equipe.getNbPoints() }}</td>
+            <td><a href=''>Modifier</a></td>
+            <td><a href=''>Supprimer</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endblock %}

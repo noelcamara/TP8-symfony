@@ -8,14 +8,14 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class EquipeController extends AbstractController
 {
-    
+
     private $equipeRepository;
-    
+
     public function __construct(EquipeRepository $equipeRepository)
     {
         $this->equipeRepository=$equipeRepository;
     }
-    
+
     /**
      * @Route("/equipe", name="equipe")
      */
