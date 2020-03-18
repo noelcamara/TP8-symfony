@@ -1,3 +1,8 @@
+index:
+    path: /
+    controller: App\Controller\IndexController::index
+
+# vues tables
 joueurs:
     path: /joueurs
     controller: App\Controller\JoueurController::index
@@ -10,3 +15,41 @@ equipes:
     path: /equipes
     controller: App\Controller\EquipeController::index
 
+# insertion de table
+joueursInsert:
+    path: /joueurs/insert
+    controller: App\Controller\JoueurController::insert
+
+matchsInsert:
+    path: /matchs/insert
+    controller: App\Controller\MatchsController::insert
+
+equipesInsert:
+    path: /equipes/insert
+    controller: App\Controller\EquipeController::insert
+
+# update de table
+joueursUpdate:
+    path: /joueurs/update/{id}
+    controller: App\Controller\JoueurController::update
+
+matchsUpdate:
+    path: /matchs/update/{id}
+    controller: App\Controller\MatchsController::update
+
+equipesUpdate:
+    path: /equipes/update/{id}
+    controller: App\Controller\EquipeController::update
+
+# delete de table
+joueursDelete:
+    path: /joueurs/delete/{id}
+    controller: App\Controller\JoueurController::delete
+
+matchsDelete:
+    path: /matchs/delete/{id}
+    controller: App\Controller\MatchsController::delete
+
+equipesDelete:
+    path: /equipes/delete/{id}
+    controller: App\Controller\EquipeController::delete
