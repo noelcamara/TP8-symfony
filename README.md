@@ -17,7 +17,7 @@
 
 ## Auteur(s)
 
-**|Nom|Prénom|**
+|Nom|Prénom|
 |--|--|
 *Bourgeaux* | *Maxence*|
 *Ghouti-Terki* | *Rida*|
