@@ -20,6 +20,6 @@
 **|Nom|Prénom|**
 |--|--|
 *Bourgeaux* | *Maxence*|
-*Ghouti Terki* | *Rida*|
+*Ghouti-Terki* | *Rida*|
 *Peronny* | *Thomas*|
-*Camara* | *Noël*
+*Camara* | *Noel*|
