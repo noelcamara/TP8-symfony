@@ -1,6 +1,12 @@
-index:
-    path: /
-    controller: App\Controller\JoueurController::vueAll
+joueurs:
+    path: /joueurs
+    controller: App\Controller\JoueurController::index
 
+matchs:
+    path: /matchs
+    controller: App\Controller\MatchsController::index
 
+equipes:
+    path: /equipes
+    controller: App\Controller\EquipeController::index
 

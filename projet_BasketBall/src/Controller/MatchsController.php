@@ -3,27 +3,28 @@
 namespace App\Controller;
 
 use App\Repository\JoueurRepository;
+use App\Repository\MatchsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 class MatchsController extends AbstractController
 {
     
-    private $joueurRepository;
+    private $matchsRepository;
     
-    public function __construct(JoueurRepository $joueurRepository)
+    public function __construct(MatchsRepository $matchsRepository)
     {
-        $this->joueurRepository = $joueurRepository;
+        $this->matchsRepository=$matchsRepository;
     }
     
     /**
-     * @Route("/joueur", name="joueur")
+     * @Route("/matchs", name="matchs")
      */
     public function index()
     {
-        $players=($this->joueurRepository->findAll());
-        return $this->render('joueur/index.html.twig', [
-            'players' => $players
+        $matchs=($this->matchsRepository->findAll());
+        return $this->render('matchs/index.html.twig', [
+            'matchs' => $matchs,
         ]);
     }
 }
