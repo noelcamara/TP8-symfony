@@ -1,24 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MatchsController!{% endblock %}
+{% block title %}Table matchs{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1> tous les matchs </h1>
-    <p>id match, date_match</p>
-    {% for match in matchs %}
-        {{ match.getIdMatch() }} {{ match.getDateMatch() }}
-        <br>
-    {% endfor %}
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/symfony/tp8-symfony/projet_BasketBall/src/Controller/MatchsController.php'|file_link(0) }}">src/Controller/MatchsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/symfony/tp8-symfony/projet_BasketBall/templates/matchs/index.html.twig'|file_link(0) }}">templates/matchs/index.html.twig</a></code></li>
-    </ul>
-</div>
+{% block content %}
+  <p><a href=''>Insérer un nouveau match</a></p><br>
+    <table id='table' class='table is-fullwidth'>
+      <thead>
+        <tr>
+          <th>id_matchs</th>
+          <th>date_matchs</th>
+          <th>elim_directe</th>
+          <th>type</th>
+          <th>score_equipe1</th>
+          <th>score_equipe2</th>
+          <th>id_equipe1</th>
+          <th>id_equipe2</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for match in matchs %}
+          <tr>
+            <td>{{ match.getIdMatch() }}</td>
+            <td>{{ match.getDateMatch() }}</td>
+            <td>{{ match.getElimDirecte() }}</td>
+            <td>{{ match.getType() }}</td>
+            <td>{{ match.getScoreEquipe1() }}</td>
+            <td>{{ match.getScoreEquipe2() }}</td>
+            <td>{{ match.getIdEquipe1() }}</td>
+            <td>{{ match.getIdEquipe2() }}</td>
+            <td><a href=''>Modifier</a></td>
+            <td><a href=''>Supprimer</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endblock %}
