@@ -17,9 +17,11 @@
                 <div class='columns'>
                   <div class='column'>
                     <div class='level-item'>
-                      <figure class='image is-96x96'><img src='{{ asset('images/LogoBasket.png') }}' alt='Championnat du monde de Basketball 2019'
-                          title='Championnat du monde de Basketball 2019'/>
-                      </figure>
+                        <a href='{{ path("index") }}'>
+                            <figure class='image is-96x96'><img src='{{ asset('images/LogoBasket.png') }}' alt='Championnat du monde de Basketball 2019'
+                                                                title='Championnat du monde de Basketball 2019'/>
+                            </figure>
+                        </a>
                     </div>
                   </div>
                   <div class='column is-8-desktop is-offset-2-desktop'>
@@ -44,6 +46,11 @@
                       <li><a href='{{ path("joueurs") }}'>Joueur</a></li>
                       <li><a href='{{ path("matchs") }}'>Matchs</a></li>
                    </ul>
+                     <p class='menu-label'>Authentification</p>
+                     <ul class='menu-list'>
+                         <li><a href='{{ path("app_login") }}'>Se connecter</a></li>
+                         <li><a href='{{ path("app_logout") }}'>Se déconnecter</a></li>
+                     </ul>
                  </aside>
              </div>
              <div class='container is-widescreen'>
