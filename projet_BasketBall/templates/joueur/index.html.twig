@@ -1,34 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Table joueur{% endblock %}
+{% block title %}Joueur index{% endblock %}
 
 {% block content %}
-  <p><a href=''>Insérer un nouveau joueur</a></p><br>
-    <table id='table' class='table is-fullwidth'>
-      <thead>
-        <tr>
-          <th>id_joueur</th>
-          <th>prenom_joueur</th>
-          <th>nom_joueur</th>
-          <th>capitaine</th>
-          <th>id_equipe</th>
-          <th>poste_joueur</th>
-        </tr>
-      </thead>
-      <tbody>
-         {% for player in players %}
-           <tr>
-              <td>{{ player.getIdJoueur() }}</td>
-              <td>{{ player.getPrenomJoueur() }}</td>
-              <td>{{ player.getNomJoueur() }}</td>
-              <td>{{ player.getCapitaine }}</td>
-              <td>{{ player.getIdEquipe() }}</td>
-              <td>{{ player.getPosteJoueur() }}</td>
-              <td><a href=''>Modifier</a></td>
-              <td><a href=''>Supprimer</a></td>
-          </tr>
+    <h1>Joueur index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id_joueur</th>
+                <th>Prenom_joueur</th>
+                <th>Nom_joueur</th>
+                <th>Capitaine</th>
+                <th>Id_equipe</th>
+                <th>Poste_joueur</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for joueur in joueurs %}
+            <tr>
+                <td>{{ joueur.idJoueur }}</td>
+                <td>{{ joueur.prenomJoueur }}</td>
+                <td>{{ joueur.nomJoueur }}</td>
+                <td>{{ joueur.capitaine }}</td>
+                <td>{{ joueur.idEquipe }}</td>
+                <td>{{ joueur.posteJoueur }}</td>
+                <td>
+                    <a href="{{ path('joueur_edit', {'id_joueur': joueur.getIdJoueur}) }}">Modifier ou Supprimer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
         {% endfor %}
-      </tbody>
+        </tbody>
     </table>
-  </div>
+
+    <a href="{{ path('joueur_new') }}">Create new</a>
 {% endblock %}
