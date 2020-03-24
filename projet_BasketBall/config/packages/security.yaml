@@ -37,3 +37,6 @@ security:
         # - { path: ^/admin, roles: ROLE_ADMIN, requires_channel: https }
         # - { path: ^/profile, roles: ROLE_USER, requires_channel: https }
         - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/joueur/\d/edit$, roles: ROLE_ADMIN }
+        - { path: ^/equipe/\d/edit$, roles: ROLE_ADMIN }
+        - { path: ^/matchs/\d/edit$, roles: ROLE_ADMIN }
