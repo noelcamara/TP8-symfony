@@ -1,38 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Table matchs{% endblock %}
+{% block title %}Matchs index{% endblock %}
 
 {% block content %}
-  <p><a href=''>Insérer un nouveau match</a></p><br>
-    <table id='table' class='table is-fullwidth'>
-      <thead>
-        <tr>
-          <th>id_matchs</th>
-          <th>date_matchs</th>
-          <th>elim_directe</th>
-          <th>type</th>
-          <th>score_equipe1</th>
-          <th>score_equipe2</th>
-          <th>id_equipe1</th>
-          <th>id_equipe2</th>
-        </tr>
-      </thead>
-      <tbody>
+    <h1>Matchs index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id_match</th>
+                <th>Date_match</th>
+                <th>Elim_directe</th>
+                <th>Type</th>
+                <th>Score_equipe1</th>
+                <th>Score_equipe2</th>
+                <th>Id_equipe1</th>
+                <th>Id_equipe2</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
         {% for match in matchs %}
-          <tr>
-            <td>{{ match.getIdMatch() }}</td>
-            <td>{{ match.getDateMatch() }}</td>
-            <td>{{ match.getElimDirecte() }}</td>
-            <td>{{ match.getType() }}</td>
-            <td>{{ match.getScoreEquipe1() }}</td>
-            <td>{{ match.getScoreEquipe2() }}</td>
-            <td>{{ match.getIdEquipe1() }}</td>
-            <td>{{ match.getIdEquipe2() }}</td>
-            <td><a href=''>Modifier</a></td>
-            <td><a href=''>Supprimer</a></td>
-          </tr>
+            <tr>
+                <td>{{ match.idMatch }}</td>
+                <td>{{ match.dateMatch }}</td>
+                <td>{{ match.elimDirecte }}</td>
+                <td>{{ match.type }}</td>
+                <td>{{ match.scoreEquipe1 }}</td>
+                <td>{{ match.scoreEquipe2 }}</td>
+                <td>{{ match.idEquipe1 }}</td>
+                <td>{{ match.idEquipe2 }}</td>
+                <td>
+                    <a href="{{ path('matchs_edit', {'id_match': match.getIdMatch}) }}">Modifier ou Supprimer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
         {% endfor %}
-      </tbody>
+        </tbody>
     </table>
-  </div>
+
+    <a href="{{ path('matchs_new') }}">Create new</a>
 {% endblock %}
