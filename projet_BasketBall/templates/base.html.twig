@@ -12,26 +12,26 @@
     <body>
         {% block body %}
           <section id='titre' class='hero is-primary'>
-            <div class='hero-body'>
-              <div class='container is-widescreen'>
-                <div class='columns'>
-                  <div class='column'>
-                    <div class='level-item'>
-                        <a href='{{ path("index") }}'>
-                            <figure class='image is-96x96'><img src='{{ asset('images/LogoBasket.png') }}' alt='Championnat du monde de Basketball 2019'
-                                                                title='Championnat du monde de Basketball 2019'/>
-                            </figure>
-                        </a>
+            <div class='hero-body bg-img'>
+                  <div class='container is-widescreen'>
+                    <div class='columns'>
+                      <div class='column'>
+                        <div class='level-item'>
+                            <a href='{{ path("index") }}'>
+                                <figure class='image is-96x96'><img src='{{ asset('images/LogoBasket.png') }}' alt='Championnat du monde de Basketball 2019'
+                                                                    title='Championnat du monde de Basketball 2019'/>
+                                </figure>
+                            </a>
+                        </div>
+                      </div>
+                      <div class='column is-8-desktop is-offset-2-desktop'>
+                        <h1 class='title is-2 is-spaced has-text-centered'>Championnat du monde de Basketball 2019</h1>
+                          <h2 class='subtitle is-4 has-text-centered'>
+                            <p>La 18e édition du Championnat du monde de basketball 2019<br>a eu lieu du 31 août au 15 septembre 2019 en Chine.</p>
+                          </h2>
+                      </div>
                     </div>
                   </div>
-                  <div class='column is-8-desktop is-offset-2-desktop'>
-                    <h1 class='title is-2 is-spaced has-text-centered'>Championnat du monde de Basketball 2019</h1>
-                      <h2 class='subtitle is-4 has-text-centered'>
-                        <p>La 18e édition du Championnat du monde de basketball 2019<br>a eu lieu du 31 août au 15 septembre 2019 en Chine.</p>
-                      </h2>
-                  </div>
-                </div>
-              </div>
             </div>
           </section>
 
@@ -66,6 +66,7 @@
                {% endblock %}
                </div>
              </div>
+           </div>
            </section>
 
            <section>
