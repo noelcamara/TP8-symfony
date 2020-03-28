@@ -6967,10 +6967,21 @@ label.panel-block {
   background-color: #f5f5f5; }
 
 .bg-img {
-  background-image: url(../images/background.png) ;
+  /*TODO: download l'image */
+  background: white url("http://www.fiba.basketball/Bundles/Penceo/brandings/6bb54dd3-6fd4-4ccb-947f-df96963ec328/BackgroundImage_fr.jpg?v=20200227091950") no-repeat fixed center 0px !important;
+  /*background-image: url(../images/background.png) ;
   background-position: center center;
   background-repeat:  no-repeat;
   background-attachment: fixed;
-  background-size:  cover;
-  box-shadow: rgba(0,0,0,.4) 0 150px 300px -50px inset;
+  background-size: cover;
+  box-shadow: rgba(0,0,0,.4) 0 150px 300px -50px inset;*/
+  padding: 0px !important;
+}
+
+.barcustom {
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-top: 2%;
+  margin-bottom: 4%;
+  background-color: rgba(0,0,0,.6) !important;
 }
