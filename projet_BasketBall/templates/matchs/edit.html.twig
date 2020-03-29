@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Matchs{% endblock %}
+{% block title %}Modification du match{% endblock %}
 
 {% block content %}
-    <h1>Edit Matchs</h1>
+    <h1>Modification du match</h1>
 
     {{ include('matchs/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('matchs_index') }}">back to list</a>
 
     {{ include('matchs/_delete_form.html.twig') }}
+    <a href="{{ path('matchs_index') }}">Revenir à la liste</a>
 {% endblock %}
