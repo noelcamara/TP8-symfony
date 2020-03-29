@@ -83,7 +83,7 @@ class MatchsController extends AbstractController
      */
     public function delete(Request $request, Matchs $match): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$match->getId_match(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$match->getIdMatch(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($match);
             $entityManager->flush();
