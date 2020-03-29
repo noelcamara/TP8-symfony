@@ -9,7 +9,8 @@
         <h1 class="modal-card-title is-3">Connectez vous pour modifier la table</h1>
     {% endif %}
     <br>
-
+    <a href="{{ path('equipe_new') }}">Ajouter une équipe</a>
+    <br>
     <div class="column is-flex">
         <table class="table is-bordered">
             <thead class="has-background-grey-light">
@@ -47,5 +48,4 @@
         </table>
     </div>
 
-    <a href="{{ path('equipe_new') }}">Create new</a>
 {% endblock %}
