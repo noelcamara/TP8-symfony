@@ -3,12 +3,16 @@
 {% block title %}Matchs index{% endblock %}
 
 {% block content %}
-    <h1>Matchs index</h1>
+    {% if not app.user %}
+        <h1 class="modal-card-title is-3">Connectez vous pour modifier la table</h1>
+    {% endif %}
+    <br>
 
-    <table class="table">
-        <thead>
+    <table class="table is-bordered">
+        <thead class="has-background-grey-light">
             <tr>
-                <th>Id_match</th>
+                {#
+                <th>Id_match</th>#}
                 <th>Date_match</th>
                 <th>Elim_directe</th>
                 <th>Type</th>
@@ -16,13 +20,15 @@
                 <th>Score_equipe2</th>
                 <th>Id_equipe1</th>
                 <th>Id_equipe2</th>
-                <th>actions</th>
+                {% if app.user %}
+                <th>Actions</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
         {% for match in matchs %}
             <tr>
-                <td>{{ match.idMatch }}</td>
+                {#<td>{{ match.idMatch }}</td>#}
                 <td>{{ match.dateMatch }}</td>
                 <td>{{ match.elimDirecte }}</td>
                 <td>{{ match.type }}</td>
@@ -30,9 +36,11 @@
                 <td>{{ match.scoreEquipe2 }}</td>
                 <td>{{ match.idEquipe1 }}</td>
                 <td>{{ match.idEquipe2 }}</td>
+                {% if app.user %}
                 <td>
                     <a href="{{ path('matchs_edit', {'id_match': match.getIdMatch}) }}">Modifier ou Supprimer</a>
                 </td>
+                {% endif %}
             </tr>
         {% else %}
             <tr>

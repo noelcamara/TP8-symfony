@@ -3,32 +3,39 @@
 {% block title %}Joueur index{% endblock %}
 
 {% block content %}
-    <h1>Joueur index</h1>
+    {% if not app.user %}
+        <h1 class="modal-card-title is-3">Connectez vous pour modifier la table</h1>
+    {% endif %}
+    <br>
 
-    <table class="table">
-        <thead>
+    <table class="table is-bordered">
+        <thead class="has-background-grey-light">
             <tr>
-                <th>Id_joueur</th>
+                {#<th>Id_joueur</th>#}
                 <th>Prenom_joueur</th>
-                <th>Nom_joueur</th>
+                <th>Nom joueur</th>
                 <th>Capitaine</th>
-                <th>Id_equipe</th>
-                <th>Poste_joueur</th>
-                <th>actions</th>
+                <th>Identifiant de l'equipe</th>
+                <th>Poste</th>
+                {% if app.user %}
+                    <th>Actions</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
         {% for joueur in joueurs %}
             <tr>
-                <td>{{ joueur.idJoueur }}</td>
+                {#<td>{{ joueur.idJoueur }}</td>#}
                 <td>{{ joueur.prenomJoueur }}</td>
                 <td>{{ joueur.nomJoueur }}</td>
                 <td>{{ joueur.capitaine }}</td>
                 <td>{{ joueur.idEquipe }}</td>
                 <td>{{ joueur.posteJoueur }}</td>
+                {% if app.user %}
                 <td>
                     <a href="{{ path('joueur_edit', {'id_joueur': joueur.getIdJoueur}) }}">Modifier ou Supprimer</a>
                 </td>
+                {% endif %}
             </tr>
         {% else %}
             <tr>
