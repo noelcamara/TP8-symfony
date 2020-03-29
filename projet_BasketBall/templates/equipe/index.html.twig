@@ -3,38 +3,48 @@
 {% block title %}Equipe index{% endblock %}
 
 {% block content %}
-    <h1>Equipe index</h1>
+    {#<h1>Equipe index</h1>#}
 
-    <table class="table">
-        <thead>
+    {% if not app.user %}
+        <h1 class="modal-card-title is-3">Connectez vous pour modifier la table</h1>
+    {% endif %}
+
+    <div class="column is-flex">
+        <table class="table is-bordered">
+            <thead class="has-background-grey-light">
             <tr>
-                <th>Id_equipe</th>
-                <th>Nom_equipe</th>
-                <th>Nb_victoire</th>
-                <th>Nb_defaite</th>
-                <th>Nb_points</th>
-                <th>actions</th>
+                {#<th>Id_equipe</th>#}
+                <th>Nom de l'équipe</th>
+                <th>Victoires</th>
+                <th>Défaites</th>
+                <th>Points</th>
+                {% if app.user %}
+                    <th>actions</th>
+                {% endif %}
             </tr>
-        </thead>
-        <tbody>
-        {% for equipe in equipes %}
-            <tr>
-                <td>{{ equipe.idEquipe }}</td>
-                <td>{{ equipe.nomEquipe }}</td>
-                <td>{{ equipe.nbVictoire }}</td>
-                <td>{{ equipe.nbDefaite }}</td>
-                <td>{{ equipe.nbPoints }}</td>
-                <td>
-                    <a href="{{ path('equipe_edit', {'id_equipe': equipe.getIdequipe}) }}">Modifier ou Supprimer</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for equipe in equipes %}
+                <tr>
+                    {#<td>{{ equipe.idEquipe }}</td>#}
+                    <td>{{ equipe.nomEquipe }}</td>
+                    <td>{{ equipe.nbVictoire }}</td>
+                    <td>{{ equipe.nbDefaite }}</td>
+                    <td>{{ equipe.nbPoints }}</td>
+                    {% if app.user %}
+                        <td>
+                            <a href="{{ path('equipe_edit', {'id_equipe': equipe.getIdequipe}) }}">Modifier ou Supprimer</a>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
     <a href="{{ path('equipe_new') }}">Create new</a>
 {% endblock %}
