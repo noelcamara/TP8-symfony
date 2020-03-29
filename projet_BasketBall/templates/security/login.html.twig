@@ -9,7 +9,7 @@
 
     {% if app.user %}
         <div class="mb-3">
-            Bonjour {{ app.user.username }} ! Vous êtes déjà connecté. Vous pouvez vous déconnecter en cliquant <a href="{{ path('app_logout') }}">ici</a>
+            Bonjour {{ app.user.username }} ! Vous êtes connecté. Vous pouvez vous déconnecter en cliquant <a href="{{ path('app_logout') }}">ici</a>
         </div>
     {% endif %}
 {#
