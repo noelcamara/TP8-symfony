@@ -8,7 +8,9 @@
     {% endif %}
     <br>
 
+    {% if app.user %}
     <a href="{{ path('joueur_new') }}">Ajouter un joueur</a>
+    {% endif %}
     <br>
     <table class="table is-bordered">
         <thead class="has-background-grey-light">

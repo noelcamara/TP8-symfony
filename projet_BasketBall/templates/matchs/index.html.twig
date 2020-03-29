@@ -7,7 +7,9 @@
         <h1 class="modal-card-title is-3">Connectez vous pour modifier la table</h1>
     {% endif %}
     <br>
+    {% if app.user %}
     <a href="{{ path('matchs_new') }}">Ajouter un match</a>
+    {% endif %}
     <br>
 
     <table class="table is-bordered">
