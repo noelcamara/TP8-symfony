@@ -6984,4 +6984,18 @@ label.panel-block {
   margin-top: 2%;
   margin-bottom: 4%;
   background-color: rgba(0,0,0,.6) !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-label {
+  font-size: 20px;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 12.7px 15px;
+  display: block;
+  cursor: pointer;
+  transition: .4s ease;
+  font-weight: bold;
 }
